@@ -3,4 +3,3 @@ FROM php:5.6-apache
 RUN docker-php-ext-install pdo mysql
 
 EXPOSE 80
-EXPOSE 3306
