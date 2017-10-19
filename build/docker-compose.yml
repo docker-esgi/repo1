@@ -1,0 +1,21 @@
+version: "3.1"
+services:
+    database:
+        image: mysql:5.6
+        environment:
+            - "MYSQL_DATABASE=database"
+            - "MYSQL_USER=database"
+            - "MYSQL_PASSWORD=root"
+            - "MYSQL_ROOT_PASSWORD=root"
+        ports:
+            - "33061:3306"
+        links:
+            - serveur
+    serveur:
+        image: configperso
+        build: .
+        container_name: server_config
+        ports:
+            - "8080:80"
+        volumes:
+            - "../applications/:/var/www/html/"
