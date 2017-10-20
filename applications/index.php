@@ -11,7 +11,7 @@ elseif ((ereg("Mac", getenv("HTTP_USER_AGENT"))) || (ereg("PPC", getenv("HTTP_US
 elseif (ereg("Linux", getenv("HTTP_USER_AGENT"))) {
 	$link = mysql_connect("build_database_1", "database", "root") or die("Impossible de se connecter : " . mysql_error());
 } else {
-	$etatConnexion = "";
+	$etatConnexion = "Echec de la connexion";
 }
 
 echo $etatConnexion;
